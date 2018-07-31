@@ -13,7 +13,7 @@ const config = merge(baseConfig, {
     app: resolve('src/index.js')
   },
   output: {
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash:8].js'
   },
   optimization: {
     splitChunks: {
@@ -41,7 +41,7 @@ const config = merge(baseConfig, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css'
+      filename: '[name].[contenthash:8].css'
     })
   ]
 })

@@ -1,9 +1,9 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const htmlPlugin = require('html-webpack-plugin')
-const vueLoaderOptions = require('./vue-loader.config')
+const htmlWebpackPlugin = require('html-webpack-plugin')
+// const vueLoaderOptions = require('./vue-loader.config')
 
-const isDev = process.env.NOOD_ENV === 'development'
+// const isDev = process.env.NOOD_ENV === 'development'
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -19,9 +19,14 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.(vue|js|jsx)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        enforce: 'pre'
+      },
+      {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderOptions(isDev)
+        loader: 'vue-loader'
       },
       {
         test: /\.jsx$/,
@@ -48,7 +53,11 @@ const config = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new htmlPlugin()
+    new htmlWebpackPlugin({
+      injuct: true,
+      filename: 'index.html',
+      template: 'index.html'
+    })
   ]
 }
 
