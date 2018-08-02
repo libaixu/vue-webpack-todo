@@ -10,7 +10,8 @@
     "lint": "eslint --ext .js --ext .jsx --ext .vue src/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src/",
     "build": "npm run clear && npm run build:client",
-    "dev": "cross-env NOOD_ENV=development webpack-dev-server --config build/webpack.config.dev.js"
+    "dev": "cross-env NOOD_ENV=development webpack-dev-server --config build/webpack.config.dev.js",
+    "practice": "cross-env NOOD_ENV=development webpack-dev-server --config build/webpack.config.practice.js"
   },
   "keywords": [
     "vue",
@@ -19,7 +20,10 @@
   "author": "li",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.5.16"
+    "koa": "^2.5.2",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.2",
@@ -27,6 +31,7 @@
     "babel-eslint": "^8.2.6",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",

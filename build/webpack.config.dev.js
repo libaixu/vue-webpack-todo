@@ -28,6 +28,9 @@ const config = merge(baseConfig, {
     overlay: {
       errors: true
     },
+    historyApiFallback: {
+      index: '/index.html'
+    },
     open: false,
     hot: true
   },

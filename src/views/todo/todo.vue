@@ -1,6 +1,6 @@
 <template>
   <section class="real-app">
-    <input 
+    <input
       type="text"
       class="add-input"
       autofocus="autofocus"
@@ -18,10 +18,10 @@
 </template>
 
 <script>
-  import Item from './item.vue'
-  import Tabs from './tabs.vue'
+  import Item from './item.vue';
+  import Tabs from './tabs.vue';
 
-  let id = 0
+  let id = 0;
 
   export default {
     data() {
@@ -69,7 +69,7 @@
 <style lang="stylus" scoped>
   .real-app
     width: 600px
-    margin: 0 auto 
+    margin: 0 auto
     box-shadow: 0 0 5px #666666
     .add-input
       position: relative
